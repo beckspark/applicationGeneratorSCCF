@@ -1,0 +1,17 @@
+$date
+$fname $lname
+$housing
+$address
+Apartment $apt
+$city, UT $zipCode
+
+$fname,
+
+Thank you for your application for vision assistance. Your application has been approved. The Senior Charity Care Foundation will help you get hearing aids on a sliding fee scale. We are happy to be able to assist you with $percent% of the costs of your new hearing aids obtained through our partners.
+
+I will be in touch with you soon regarding the next steps to obtaining your hearing aids. Feel free to reach out to me at (801) 515-0480 if you have any questions or concerns. If I am not at the office, one of my co-workers will gladly take a message for you if you give them my name, and I will get back to you as soon as possible.
+
+Sincerely,
+
+$$yourName 
+$$title

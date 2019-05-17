@@ -1,0 +1,19 @@
+$date
+$fname $lname
+$housing
+$address
+Apartment $apt
+$city, UT $zipCode
+$phone
+
+$fname,
+
+Thank you for your application for vision assistance. Your application has been approved. The Senior Charity Care Foundation will help you get glasses on a sliding fee scale. We are happy to be able to assist you with $percent% of the costs of your new glasses obtained through our partners.
+
+I will be in touch with you soon regarding the next steps to obtaining your glasses. If I have not received a copy of your prescription yet, we will need that before making a cost estimate for you. After that, I will find out the cost from one of our providers and let you know the amount and time that you would be able to receive them after you have paid your portion.
+
+Feel free to reach out to me at (801) 515-0480 if you have any questions or concerns. If I am not at the office, one of my co-workers will gladly take a message for you if you give them my name, and I will get back to you as soon as possible.
+Sincerely,
+
+$$yourName 
+$$title

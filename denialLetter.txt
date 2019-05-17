@@ -1,0 +1,18 @@
+$date
+$fname $lname
+$housing
+$address
+Apartment $apt
+$city, UT $zipCode
+$phone
+
+$fname,
+
+Thank you for your application for assistance. Unfortunately, your application could not be approved at this time. We are basing this decision based off of your reported monthly income of $$$mincome, which is over our income limit for your household size.
+
+I apologize for this inconvenience and the decision we had to make. Feel free to reach out to me at (801) 515-0480 if you have any questions or concerns. If I am not at the office, one of my co-workers will gladly take a message for you if you give them my name, and I will get back to you as soon as possible.
+
+Sincerely,
+
+$$yourName 
+$$title
