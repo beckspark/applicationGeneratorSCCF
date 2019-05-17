@@ -9,3 +9,9 @@ This project is a simple python script meant to automate the administrative case
 5) Uses pandas to read & write the applicant's data to the appropriate files used by the organization for future reporting & analysis.
 
 This is one of my first projects in Python, and I am more than open to criticisms & especially suggestions on how to make the code cleaner, more intuitive, & what features I might think of adding in the future.
+
+What I currently plan on changing or adding:
+
+- Accessing and utilizing poverty levels directly from hhs.gov ('https://aspe.hhs.gov/poverty-guidelines'), and using them to automatically determine the approval level for the organization without the need to manually update the numbers year-by-year (the organization approves seniors up to 200% of the federal poverty guidelines).
+
+- Moving the organization's data-keeping files from Dropbox to Google Drive, & updating the appropriate files automatically through the Google Docs & Sheets API.
