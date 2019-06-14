@@ -87,17 +87,17 @@ try:
                 housingType = str(dbtype[match])
                 county = str(dbcounties[match])
                 break
-    elif (len(get_close_matches(housing, dbhousing)) == 0) or (yn == "N"):
-            print('%s was not found in the database. Please enter the information for their housing manually: ' % housing)
-            address = str(input('What is their street name and number?: '))
-            city = str(input('What city?: '))
-            zipCode = str(input('What zip code?: '))
-            housingType = 'no'
-            while housingType != "AL" and housingType != "IL":
-                housingType = input('What is their housing type? AL for Assisted Living, IL for Independent Living, please: ')
-            county = input('What is the name of their county?: ').replace("County","").replace("county","")
-            db1 = db.append(pd.DataFrame([[housing,address,city,zipCode,housingType,county]], columns=db.columns))
-            db1.to_excel('Senior_Housing_2019.xlsx', index=False)
+        if (len(get_close_matches(housing, dbhousing)) == 0) or (yn == "N"):
+                print('%s was not found in the database. Please enter the information for their housing manually: ' % housing)
+                address = str(input('What is their street name and number?: '))
+                city = str(input('What city?: '))
+                zipCode = str(input('What zip code?: '))
+                housingType = 'no'
+                while housingType != "AL" and housingType != "IL":
+                    housingType = input('What is their housing type? AL for Assisted Living, IL for Independent Living, please: ')
+                county = input('What is the name of their county?: ').replace("County","").replace("county","")
+                db1 = db.append(pd.DataFrame([[housing,address,city,zipCode,housingType,county]], columns=db.columns))
+                db1.to_excel('Senior_Housing_2019.xlsx', index=False)
     service = input('What is the service that they need? (\'D\' for dental, \'V\' for vision, \'H\' for hearing, \'DV\' for dental and vision, etc.: ')
     servicel = []
     if 'D' in service:
@@ -113,6 +113,8 @@ try:
     apt = str(input('What is their apartment number? Number only, please: '))
     phone = str(input('What is their phone number?: ').replace("(", "").replace(")", "").replace("-", ""))
     dob = input('What is their date of birth? MM/DD/YYYY format only, please: ')
+    dobs = dob.split("/")
+    dobs = int(dobs[2])
     mincome = float(input('What is their MONTHLY income?: ').replace(",", "").replace("$", ""))
     if housingType == "AL":
         facilityCharges = float(input('What do they pay to the facility every month?: '))
@@ -131,7 +133,9 @@ try:
     subprocess.call(['taskkill', '/f', '/im', 'SumatraPDF.exe'])
     pdfOpen.kill()
     # But first, let's be sure to rename the application so that it gets moved with the rest of the files.
-    shutil.move(appAbs,os.path.join(procDir,(lname + "_" + fname + "_Application_" + dateSave + ".pdf")))
+    newApp = os.path.join(os.path.join(procDir,(lname + "_" + fname + "_Application_" + dateSave + ".pdf")))
+    shutil.move(appAbs,newApp)
+    appAbs = newApp
     print('Processing data now, please wait...')
     if hh == '1':
         if mincome <= 1011.67:
@@ -195,6 +199,10 @@ try:
             approval = 'Approval'
         elif mincome > 2743.34:
             approval = 'Denial'
+    #yearApprove = yearSave - dobs
+    #if yearApprove < '55':
+        #approval = 'Denial'
+
 
     if 'D' in service:
         dentures = denture*2
@@ -310,6 +318,9 @@ try:
                         dmWin.type_keys('{F3}')
                     elif cont == "NO":
                         print('This client is already in DentiMax and will not be added at this time. Please remember to add them to a waiting list or give them an appointment, as appropriate.')
+                        break
+            elif cont == "NO":
+                print('This client is already in DentiMax and will not be added at this time. Please remember to add them to a waiting list or give them an appointment, as appropriate.')
 
 
     if 'V' in service:
@@ -418,12 +429,11 @@ try:
     exit = 'no'
     while exit != 'e':
         exit = input('This client has been processed! Please enter \'e\' to exit: ')
-        exit()
 except:
     exit = 'no'
     while exit != 'e':
         exit = input('There appears to have been an error. Please try again. Enter \'e\' to exit: ')
     shutil.copy(appAbs,penDir)
     os.remove(appAbs)
-    exit()
+    SystemExit()
 
