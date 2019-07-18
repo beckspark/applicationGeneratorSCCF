@@ -16,3 +16,7 @@ This is one of my first projects in Python, and I am more than open to criticism
 What I currently plan on changing or adding:
 
 - Still need to organize the modules into a cohesive flow. Each module works individually but I still need to organize them to work 100% with each other.
+
+- Writing out docstrings & documentation so other people can make heads or tails of my logic & the purpose of everything.
+
+- Finish the module for processing vision applications specifically.
