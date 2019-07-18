@@ -20,3 +20,5 @@ What I currently plan on changing or adding:
 - Writing out docstrings & documentation so other people can make heads or tails of my logic & the purpose of everything.
 
 - Finish the module for processing vision applications specifically.
+
+- Finish module for applicants that are denied, similar to the letter-creation approach in hearing_app & dental_app.
