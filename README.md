@@ -15,6 +15,4 @@ This is one of my first projects in Python, and I am more than open to criticism
 
 What I currently plan on changing or adding:
 
-
-
-- Moving the organization's data-keeping files from Dropbox to Google Drive, & updating the appropriate files automatically through the Google Docs & Sheets API.
+- Still need to organize the modules into a cohesive flow. Each module works individually but I still need to organize them to work 100% with each other.
